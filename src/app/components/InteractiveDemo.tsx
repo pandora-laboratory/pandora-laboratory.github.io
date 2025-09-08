@@ -57,10 +57,12 @@ export default function InteractiveDemo({ items, className }: InteractiveDemoPro
             </div>
 
             {/* Player */}
-            <div className="mt-8 rounded-xl ring-1 ring-zinc-200 dark:ring-zinc-800 bg-white dark:bg-zinc-900 p-4">
+            <div className="mt-8 rounded-xl ring-1 ring-zinc-200 bg-white p-4">
                 {activeItem ? (
                     <video
-                        ref={(el) => (videoRefs.current[activeItem.id] = el)}
+                        ref={(el) => {
+                            videoRefs.current[activeItem.id] = el;
+                        }}
                         key={activeItem.id}
                         src={activeItem.videoSrc}
                         className="w-full aspect-video rounded-md bg-black"
