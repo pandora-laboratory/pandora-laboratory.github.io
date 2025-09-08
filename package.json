@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "export": "next export",
-    "pages:build": "next build && next export -o docs"
+    "pages:build": "next build && next export -o docs",
+    "pages:docs": "npm run build && rm -rf docs && mkdir -p docs && cp -R .next/static docs/ && cp -R .next/server/app/* docs/ || true && cp -R public/* docs/ || true && touch docs/.nojekyll"
   },
   "dependencies": {
     "react": "19.1.0",

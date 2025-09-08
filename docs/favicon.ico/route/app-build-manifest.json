@@ -1,0 +1,10 @@
+{
+  "pages": {
+    "/favicon.ico/route": [
+      "static/chunks/708dfc0609e1343f.js",
+      "static/chunks/079efb4bc77f350c.js",
+      "static/chunks/ea7ab0dba7b47d7c.js",
+      "static/chunks/turbopack-fd6c976a90393a42.js"
+    ]
+  }
+}
