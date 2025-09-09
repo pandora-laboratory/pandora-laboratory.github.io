@@ -131,8 +131,6 @@ export default function Home() {
             This website template is borrowed from Nerfies and ProPainter. Thank you!
           </p>
         </section>
-
-        <section className="mt-12 text-center text-sm text-zinc-500">visitors</section>
       </main>
     </div>
   );
