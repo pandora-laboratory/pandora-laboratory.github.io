@@ -127,9 +127,9 @@ export default function Home() {
           <p className="mt-3 text-zinc-700">
             Given an input image and a target object mask, ObjectClear employs an Object-Effect Attention mechanism to guide the model toward foreground removal regions by learning attention masks. The predicted mask further enables an Attention-Guided Fusion strategy during inference, which substantially preserves background details.
           </p>
-          <p className="mt-3 text-zinc-700 dark:text-zinc-300">
+          {/* <p className="mt-3 text-zinc-700 dark:text-zinc-300">
             This website template is borrowed from Nerfies and ProPainter. Thank you!
-          </p>
+          </p> */}
         </section>
       </main>
     </div>
