@@ -9,39 +9,38 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           {/* Title */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-8 px-4">
-            ObjectDrop: Bootstrapping Counterfactuals for<br />
-            Photorealistic Object Removal and Insertion
+            PANDORA<br />
+            Pixel-wise Attention Dissolution<br />
+            and Latent Guidance<br />
+            for Zero-Shot Object Removal
           </h1>
 
           {/* Authors */}
           <div className="text-lg md:text-xl mb-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <span>
-              Daniel Winter<sup>1,2</sup>
+              Dinh-Khoi Vo<sup>1,2,3</sup>
             </span>
             <span>
-              Matan Cohen<sup>1</sup>
+              Van-Loc Nguyen<sup>1,2,3</sup>
             </span>
             <span>
-              Shlomi Fruchter<sup>1</sup>
+              Minh-Triet Tran<sup>1,2,3</sup>
             </span>
             <span>
-              Yael Pritch<sup>1</sup>
-            </span>
-            <span>
-              Alex Rav-Acha<sup>1</sup>
-            </span>
-            <span>
-              Yedid Hoshen<sup>1,2</sup>
+              Trung-Nghia Le<sup>1,2,3</sup>
             </span>
           </div>
 
           {/* Affiliations */}
-          <div className="text-base md:text-lg mb-4 flex flex-wrap items-center justify-center gap-x-8">
+          <div className="text-base md:text-lg mb-4 flex flex-col items-center justify-center gap-y-2">
             <span>
-              <sup>1</sup>Google Research
+              <sup>1</sup>Faculty of Information Technology, University of Science, VNU-HCM, Ho Chi Minh City, Vietnam
             </span>
             <span>
-              <sup>2</sup>The Hebrew University of Jerusalem
+              <sup>2</sup>Software Engineering Laboratory, University of Science, VNU-HCM, Ho Chi Minh City, Vietnam
+            </span>
+            <span>
+              <sup>3</sup>Vietnam National University, Ho Chi Minh City, Vietnam
             </span>
           </div>
 
