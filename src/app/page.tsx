@@ -70,10 +70,12 @@ export default function Home() {
               ARXIV
             </a>
             <a
-              href="#"
+              href="https://github.com/padora-research/padora-research.github.io"
               className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              New: ObjectMate
+              Code
             </a>
           </div>
 
