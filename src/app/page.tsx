@@ -79,15 +79,20 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Hero Image Demo */}
+          {/* Hero Video Demo */}
           <div className="max-w-4xl mx-auto bg-gray-100 rounded-lg p-8">
-            <h2 className="text-3xl text-gray-700 font-light mb-6">Original Image</h2>
+            <h2 className="text-3xl text-gray-700 font-light mb-6">Demo Video</h2>
             <div className="aspect-video bg-white rounded overflow-hidden">
-              <img
-                src="/globe.svg"
-                alt="Demo"
+              <video
                 className="w-full h-full object-cover"
-              />
+                controls
+                loop
+                muted
+                playsInline
+              >
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
