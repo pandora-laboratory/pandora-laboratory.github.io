@@ -3,135 +3,212 @@ import InteractiveDemo from "./components/InteractiveDemo";
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-gray-900 bg-white">
-      <header className="w-full border-b border-zinc-200/60">
-        <div className="max-w-5xl mx-auto px-4 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded bg-zinc-900" />
-            <span className="font-semibold">Complete Object Removal via Object-Effect Attention</span>
-          </div>
-          <nav className="flex items-center gap-3 text-sm">
-            <a className="px-3 py-1 rounded hover:bg-zinc-100" href="#">arXiv</a>
-            <a className="px-3 py-1 rounded hover:bg-zinc-100" href="#">Code</a>
-            <a className="px-3 py-1 rounded hover:bg-zinc-100" href="#">Demo</a>
-          </nav>
-        </div>
-      </header>
-
-      <main className="max-w-5xl mx-auto px-4 py-10">
-        <section className="text-center">
-          {/* Project name with reflection */}
-          <div className="relative inline-block select-none">
-            <div className="text-5xl sm:text-6xl font-extrabold tracking-tight text-red-600">Object Clear</div>
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-full text-5xl sm:text-6xl font-extrabold tracking-tight text-red-600/40 opacity-40 translate-y-1 scale-y-[-1] blur-[1px]"
-            >
-              Object Clear
-            </div>
-          </div>
-
-          {/* Paper title */}
-          <h1 className="mt-8 text-4xl sm:text-5xl font-semibold leading-tight text-zinc-900">
-            Complete Object Removal via Object-Effect Attention
+    <div className="min-h-screen bg-slate-700 text-white">
+      {/* Hero Section */}
+      <section className="py-12 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Title */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-8 px-4">
+            ObjectDrop: Bootstrapping Counterfactuals for<br />
+            Photorealistic Object Removal and Insertion
           </h1>
 
           {/* Authors */}
-          <p className="mt-8 text-xl text-zinc-700 flex flex-wrap gap-x-2 gap-y-1 items-center justify-center">
-            <a className="text-blue-600 hover:underline" href="#">Jixin Zhao</a>,
-            <a className="text-blue-600 hover:underline" href="#">Shangchen Zhou</a>
-            <sup className="text-zinc-500 ml-0.5">†</sup>,
-            <a className="text-blue-600 hover:underline" href="#">Zhouxia Wang</a>,
-            <a className="text-blue-600 hover:underline" href="#">Peiqing Yang</a>,
-            <a className="text-blue-600 hover:underline" href="#">Chen Change Loy</a>
-          </p>
+          <div className="text-lg md:text-xl mb-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <span>
+              Daniel Winter<sup>1,2</sup>
+            </span>
+            <span>
+              Matan Cohen<sup>1</sup>
+            </span>
+            <span>
+              Shlomi Fruchter<sup>1</sup>
+            </span>
+            <span>
+              Yael Pritch<sup>1</sup>
+            </span>
+            <span>
+              Alex Rav-Acha<sup>1</sup>
+            </span>
+            <span>
+              Yedid Hoshen<sup>1,2</sup>
+            </span>
+          </div>
 
-          {/* Affiliation */}
-          <p className="mt-4 text-xl text-zinc-600">
-            S-Lab, Nanyang Technological University
-          </p>
-          <p className="mt-2 text-lg text-zinc-500">
-            <sup>†</sup>Corresponding author
-          </p>
+          {/* Affiliations */}
+          <div className="text-base md:text-lg mb-4 flex flex-wrap items-center justify-center gap-x-8">
+            <span>
+              <sup>1</sup>Google Research
+            </span>
+            <span>
+              <sup>2</sup>The Hebrew University of Jerusalem
+            </span>
+          </div>
 
-          {/* Action buttons */}
-          <div className="mt-8 flex items-center justify-center gap-6">
+          {/* Conference */}
+          <div className="text-xl md:text-2xl font-semibold mb-8">
+            ECCV 2024
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <a
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-zinc-900 text-white text-xl shadow hover:opacity-90"
               href="#"
+              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
             >
-              <span aria-hidden>⚔️</span>
-              arXiv
+              PDF
             </a>
             <a
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-zinc-900 text-white text-xl shadow hover:opacity-90"
               href="#"
+              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
             >
-              <span aria-hidden>💻</span>
-              Code
+              ARXIV
             </a>
             <a
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-zinc-900 text-white text-xl shadow hover:opacity-90"
               href="#"
+              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
             >
-              <span aria-hidden>😺</span>
-              Demo
+              New: ObjectMate
             </a>
           </div>
-        </section>
 
-        <section className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Example sliders using placeholder assets; replace with real images when available */}
-          <BeforeAfterSlider beforeSrc="/next.svg" afterSrc="/vercel.svg" label="Shadow" />
-          <BeforeAfterSlider beforeSrc="/next.svg" afterSrc="/vercel.svg" label="Shadow" />
-          <BeforeAfterSlider beforeSrc="/next.svg" afterSrc="/vercel.svg" label="Shadow" />
-          <BeforeAfterSlider beforeSrc="/window.svg" afterSrc="/globe.svg" label="Reflection" />
-          <BeforeAfterSlider beforeSrc="/globe.svg" afterSrc="/window.svg" label="Reflection" />
-          <BeforeAfterSlider beforeSrc="/vercel.svg" afterSrc="/next.svg" label="Reflection" />
-        </section>
+          {/* Hero Image Demo */}
+          <div className="max-w-4xl mx-auto bg-gray-100 rounded-lg p-8">
+            <h2 className="text-3xl text-gray-700 font-light mb-6">Original Image</h2>
+            <div className="aspect-video bg-white rounded overflow-hidden">
+              <img
+                src="/globe.svg"
+                alt="Demo"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold">Abstract</h2>
-          <p className="mt-3 text-zinc-700">
-            Object removal requires eliminating not only the target object but also its effects, such as shadows and reflections. However, diffusion-based inpainting methods often produce artifacts, hallucinate content, alter background, and struggle to remove object effects accurately. To address this challenge, we introduce a new dataset for OBject-Effect Removal, named OBER, which provides paired images with and without object effects, along with precise masks for both objects and their associated visual artifacts. The dataset comprises high-quality captured and simulated data, covering diverse object categories and complex multi-object scenes. Building on OBER, we propose a novel framework, ObjectClear, which incorporates an object-effect attention mechanism to guide the model toward the foreground removal regions by learning attention masks, effectively decoupling foreground removal from background reconstruction. Furthermore, the predicted attention map enables an attention-guided fusion strategy during inference, greatly preserving background details. Extensive experiments demonstrate that ObjectClear significantly outperforms existing methods, achieving superior object-effect removal quality and background fidelity, especially in complex scenarios.
+      {/* Abstract Section */}
+      <section className="py-12 px-4 bg-gray-100 text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex gap-8">
+            <h2 className="text-3xl font-bold uppercase min-w-fit">Abstract</h2>
+            <p className="text-lg leading-relaxed">
+              Diffusion models have revolutionized image editing but often generate images that violate physical
+              laws, particularly the effects of objects on the scene, e.g., occlusions, shadows, and reflections. By
+              analyzing the limitations of self-supervised approaches, we propose a practical solution centered
+              on a &quot;counterfactual&quot; dataset. Our method involves capturing a scene before and after removing a
+              single object, while minimizing other changes. By fine-tuning a diffusion model on this dataset, we
+              are able to not only remove objects but also their effects on the scene. However, we find that
+              applying this approach for photorealistic object insertion requires an impractically large dataset. To
+              tackle this challenge, we propose bootstrap supervision; leveraging our object removal model
+              trained on a small counterfactual dataset, we synthetically expand this dataset considerably. Our
+              approach significantly outperforms prior methods in photorealistic object removal and insertion,
+              particularly at modeling the effects of objects on the scene.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Object Removal Section */}
+      <section className="py-16 px-4 bg-white text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Object Removal</h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto leading-relaxed">
+            Our object removal model effectively eliminates objects and their effects on the scene from images. Despite being
+            trained on a relatively small counterfactual dataset captured in controlled environments, the model demonstrates
+            remarkable generalization to diverse scenarios, seamlessly removing large objects.
           </p>
-        </section>
 
-        <InteractiveDemo
-          className="mt-12"
-          items={[
-            {
-              id: "scribbles",
-              title: "ObjectClear with User Strokes",
-              thumbSrc: "/window.svg",
-              videoSrc: "/videos/scribbles.mp4",
-            },
-            {
-              id: "clicks",
-              title: "ObjectClear with User Clicks",
-              thumbSrc: "/globe.svg",
-              videoSrc: "/videos/clicks.mp4",
-            },
-          ]}
-        />
+          {/* Info Box */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg py-4 px-6 mb-8 text-center">
+            <p className="text-blue-900 flex items-center justify-center gap-2">
+              <span className="text-2xl">👆</span>
+              <span>Click on any image to see results</span>
+            </p>
+          </div>
 
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold">OBER Dataset</h2>
-          <p className="mt-3 text-zinc-700">
-            The OBER dataset combines both camera-captured and simulated data, featuring diverse foreground objects and background scenes. It provides rich annotations, including object masks, object-effect masks, transparent RGBA object layers, and complex multi-object scenarios for training and evaluation.
-          </p>
-        </section>
+          {/* Image Gallery Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <BeforeAfterSlider beforeSrc="/next.svg" afterSrc="/vercel.svg" label="Boat House" />
+            <BeforeAfterSlider beforeSrc="/window.svg" afterSrc="/globe.svg" label="Hot Air Balloon" />
+            <BeforeAfterSlider beforeSrc="/globe.svg" afterSrc="/file.svg" label="Helicopter" />
+            <BeforeAfterSlider beforeSrc="/vercel.svg" afterSrc="/next.svg" label="Tiger" />
+            <BeforeAfterSlider beforeSrc="/file.svg" afterSrc="/window.svg" label="Dog on Beach" />
+            <BeforeAfterSlider beforeSrc="/next.svg" afterSrc="/vercel.svg" label="Whiskey Glass" />
+            <BeforeAfterSlider beforeSrc="/window.svg" afterSrc="/globe.svg" label="Giraffe" />
+            <BeforeAfterSlider beforeSrc="/globe.svg" afterSrc="/vercel.svg" label="Tree on Beach" />
+          </div>
+        </div>
+      </section>
 
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold">ObjectClear Pipeline</h2>
-          <p className="mt-3 text-zinc-700">
-            Given an input image and a target object mask, ObjectClear employs an Object-Effect Attention mechanism to guide the model toward foreground removal regions by learning attention masks. The predicted mask further enables an Attention-Guided Fusion strategy during inference, which substantially preserves background details.
-          </p>
-          {/* <p className="mt-3 text-zinc-700 dark:text-zinc-300">
-            This website template is borrowed from Nerfies and ProPainter. Thank you!
-          </p> */}
-        </section>
-      </main>
+      {/* Approach Section */}
+      <section className="py-16 px-4 bg-gray-100 text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex gap-8">
+            <h2 className="text-3xl font-bold uppercase min-w-fit">Approach</h2>
+            <div>
+              <p className="text-lg leading-relaxed mb-6">
+                We collect a counterfactual dataset consisting of photos of scenes before and after removing an
+                object, while keeping everything else fixed. We used this dataset to finetune a diffusion model to
+                remove an object and all its effects from the scene. For the task of object insertion, we bootstrap
+                bigger dataset by removing selected objects from a large unsupervised image dataset, resulting in
+                a vast, synthetic counterfactual dataset. Training on this synthetic dataset and then fine tuning on
+                a smaller, original, supervised dataset yields a high quality object insertion model.
+              </p>
+
+              {/* Approach Diagram placeholder */}
+              <div className="bg-white rounded-lg p-6 border border-gray-200">
+                <div className="aspect-[2/1] bg-gray-50 rounded flex items-center justify-center text-gray-400">
+                  <span className="text-lg">Approach Diagram</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BibTeX Section */}
+      <section className="py-16 px-4 bg-white text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex gap-8">
+            <h2 className="text-3xl font-bold uppercase min-w-fit">BibTex</h2>
+            <div className="flex-1">
+              <pre className="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-x-auto text-sm font-mono">
+                {`@misc{winter2024objectdrop,
+      title={ObjectDrop: Bootstrapping Counterfactuals for Photorealistic Object Removal and Insertion},
+      author={Daniel Winter and Matan Cohen and Shlomi Fruchter and Yael Pritch and Alex Rav-Acha and Yedid Hoshen},
+      year={2024},
+      eprint={2403.18818},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}`}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Acknowledgment Section */}
+      <section className="py-16 px-4 bg-gray-200 text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex gap-8">
+            <h2 className="text-3xl font-bold uppercase min-w-fit">Acknowledgment</h2>
+            <div className="flex-1">
+              <p className="text-lg leading-relaxed mb-6">
+                We would like to thank to Gitartha Goswami, Soumyadip Ghosh, Reggie Ballesteros,
+                Srimon Chatterjee, Michael Milne and James Adamson for providing the photographs
+                that made this project possible. We thank Yaron Brodsky, Dana Berman, Amir Hertz,
+                Moab Arar, and Oren Katzir for their invaluable feedback and discussions. We also
+                appreciate the insights provided by Dani Lischinski and Daniel Cohen-Or, which helped
+                improve this work.
+              </p>
+              <p className="text-lg leading-relaxed">
+                We thank owners of images on this site (<a href="#" className="text-blue-600 hover:underline">link</a> for attributions) for sharing their valuable
+                assets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
