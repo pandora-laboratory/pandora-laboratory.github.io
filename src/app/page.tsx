@@ -104,17 +104,7 @@ export default function Home() {
           <div className="flex gap-8">
             <h2 className="text-3xl font-bold uppercase min-w-fit">Abstract</h2>
             <p className="text-lg leading-relaxed">
-              Diffusion models have revolutionized image editing but often generate images that violate physical
-              laws, particularly the effects of objects on the scene, e.g., occlusions, shadows, and reflections. By
-              analyzing the limitations of self-supervised approaches, we propose a practical solution centered
-              on a &quot;counterfactual&quot; dataset. Our method involves capturing a scene before and after removing a
-              single object, while minimizing other changes. By fine-tuning a diffusion model on this dataset, we
-              are able to not only remove objects but also their effects on the scene. However, we find that
-              applying this approach for photorealistic object insertion requires an impractically large dataset. To
-              tackle this challenge, we propose bootstrap supervision; leveraging our object removal model
-              trained on a small counterfactual dataset, we synthetically expand this dataset considerably. Our
-              approach significantly outperforms prior methods in photorealistic object removal and insertion,
-              particularly at modeling the effects of objects on the scene.
+              Removing objects from natural images remains a formidable challenge, often hindered by the inability to synthesize semantically appropriate content in the foreground while preserving background integrity. Existing methods often rely on fine-tuning, prompt engineering, or inference-time optimization, yet still struggle to maintain texture consistency, produce rigid or unnatural results, lack precise foreground-background disentanglement, and fail to flexibly handle multiple objects—ultimately limiting their scalability and practical applicability. In this paper, we propose a zero-shot object removal framework that operates directly on pre-trained text-to-image diffusion models—requiring no fine-tuning, no prompts, and no optimization. At the core is our Pixel-wise Attention Dissolution, which performs fine-grained, pixel-wise dissolution of object information by nullifying the most correlated keys for each masked pixel. This operation causes the object to vanish from the self-attention flow, allowing the coherent background context to seamlessly dominate the reconstruction. To complement this, we introduce Localized Attentional Disentanglement Guidance, which steers the denoising process toward latent manifolds that favor clean object removal. Together, Pixel-wise Attention Dissolution and Localized Attentional Disentanglement Guidance enable precise, non-rigid, scalable, and prompt-free multi-object erasure in a single pass. Experiments show our method outperforms state-of-the-art methods even with fine-tuned and prompt-guided baselines in both visual fidelity and semantic plausibility.
             </p>
           </div>
         </div>
