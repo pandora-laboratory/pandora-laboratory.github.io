@@ -16,6 +16,11 @@ export default function Home() {
           </h1>
 
           {/* Authors */}
+          <div className="text-lg md:text-xl mb-8">
+            Anonymous authors
+          </div>
+
+          {/* Authors - Commented for anonymous submission
           <div className="text-lg md:text-xl mb-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <span>
               Dinh-Khoi Vo<sup>1,2,3</sup>
@@ -31,7 +36,7 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Affiliations */}
+          {/* Affiliations - Commented for anonymous submission
           <div className="text-base md:text-lg mb-4 flex flex-col items-center justify-center gap-y-2">
             <span>
               <sup>1</sup>Faculty of Information Technology, University of Science, VNU-HCM, Ho Chi Minh City, Vietnam
@@ -44,10 +49,11 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Conference */}
+          {/* Conference - Commented for anonymous submission
           <div className="text-xl md:text-2xl font-semibold mb-8">
             ECCV 2024
           </div>
+          */}
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
