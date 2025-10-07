@@ -124,20 +124,20 @@ export default function Home() {
           <div className="bg-blue-50 border border-blue-200 rounded-lg py-4 px-6 mb-8 text-center">
             <p className="text-blue-900 flex items-center justify-center gap-2">
               <span className="text-2xl">👆</span>
-              <span>Click on any image to see results</span>
+              <span>Slide any image to see results</span>
             </p>
           </div>
 
           {/* Image Gallery Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <BeforeAfterSlider beforeSrc="/next.svg" afterSrc="/vercel.svg" label="Boat House" />
-            <BeforeAfterSlider beforeSrc="/window.svg" afterSrc="/globe.svg" label="Hot Air Balloon" />
-            <BeforeAfterSlider beforeSrc="/globe.svg" afterSrc="/file.svg" label="Helicopter" />
-            <BeforeAfterSlider beforeSrc="/vercel.svg" afterSrc="/next.svg" label="Tiger" />
-            <BeforeAfterSlider beforeSrc="/file.svg" afterSrc="/window.svg" label="Dog on Beach" />
-            <BeforeAfterSlider beforeSrc="/next.svg" afterSrc="/vercel.svg" label="Whiskey Glass" />
-            <BeforeAfterSlider beforeSrc="/window.svg" afterSrc="/globe.svg" label="Giraffe" />
-            <BeforeAfterSlider beforeSrc="/globe.svg" afterSrc="/vercel.svg" label="Tree on Beach" />
+            <BeforeAfterSlider beforeSrc="/results/img_1_original.png" afterSrc="/results/img_1_result.png" label="" />
+            <BeforeAfterSlider beforeSrc="/results/img_2_original.png" afterSrc="/results/img_2_result.png" label="" />
+            <BeforeAfterSlider beforeSrc="/results/img_3_original.png" afterSrc="/results/img_3_result.png" label="" />
+            <BeforeAfterSlider beforeSrc="/results/img_4_original.png" afterSrc="/results/img_4_result.png" label="" />
+            <BeforeAfterSlider beforeSrc="/results/img_5_original.png" afterSrc="/results/img_5_result.png" label="" />
+            <BeforeAfterSlider beforeSrc="/results/img_6_original.png" afterSrc="/results/img_6_result.png" label="" />
+            <BeforeAfterSlider beforeSrc="/results/img_7_original.png" afterSrc="/results/img_7_result.png" label="" />
+            <BeforeAfterSlider beforeSrc="/results/img_8_original.png" afterSrc="/results/img_8_result.png" label="" />
           </div>
         </div>
       </section>
