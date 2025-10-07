@@ -191,17 +191,16 @@ export default function Home() {
           <div className="flex gap-8">
             <h2 className="text-3xl font-bold uppercase min-w-fit">Acknowledgment</h2>
             <div className="flex-1">
-              <p className="text-lg leading-relaxed mb-6">
-                We would like to thank to Gitartha Goswami, Soumyadip Ghosh, Reggie Ballesteros,
-                Srimon Chatterjee, Michael Milne and James Adamson for providing the photographs
-                that made this project possible. We thank Yaron Brodsky, Dana Berman, Amir Hertz,
-                Moab Arar, and Oren Katzir for their invaluable feedback and discussions. We also
-                appreciate the insights provided by Dani Lischinski and Daniel Cohen-Or, which helped
-                improve this work.
-              </p>
               <p className="text-lg leading-relaxed">
-                We thank owners of images on this site (<a href="#" className="text-blue-600 hover:underline">link</a> for attributions) for sharing their valuable
-                assets.
+                This website design is inspired by{" "}
+                <a
+                  href="https://objectdrop.github.io/"
+                  className="text-blue-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ObjectDrop
+                </a>. We thank the authors for their excellent work.
               </p>
             </div>
           </div>
