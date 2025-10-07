@@ -164,14 +164,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BibTeX Section */}
+      {/* BibTeX Section - Commented for now
       <section className="py-16 px-4 bg-white text-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="flex gap-8">
             <h2 className="text-3xl font-bold uppercase min-w-fit">BibTex</h2>
             <div className="flex-1">
               <pre className="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-x-auto text-sm font-mono">
-                {`@misc{winter2024objectdrop,
+{`@misc{winter2024objectdrop,
       title={ObjectDrop: Bootstrapping Counterfactuals for Photorealistic Object Removal and Insertion},
       author={Daniel Winter and Matan Cohen and Shlomi Fruchter and Yael Pritch and Alex Rav-Acha and Yedid Hoshen},
       year={2024},
@@ -184,6 +184,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Acknowledgment Section */}
       <section className="py-16 px-4 bg-gray-200 text-gray-900">
