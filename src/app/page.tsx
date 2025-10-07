@@ -115,9 +115,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold uppercase text-center mb-6">Object Removal</h2>
           <p className="text-lg text-center mb-6 max-w-4xl mx-auto leading-relaxed">
-            Our object removal model effectively eliminates objects and their effects on the scene from images. Despite being
-            trained on a relatively small counterfactual dataset captured in controlled environments, the model demonstrates
-            remarkable generalization to diverse scenarios, seamlessly removing large objects.
+            We propose a zero-shot object removal framework that operates directly on pre-trained diffusion models in a single pass, without any fine-tuning, prompt engineering, or inference-time optimization, thus fully leveraging their latent generative capacity for inpainting
           </p>
 
           {/* Info Box */}
@@ -149,19 +147,19 @@ export default function Home() {
             <h2 className="text-3xl font-bold uppercase min-w-fit">Approach</h2>
             <div>
               <p className="text-lg leading-relaxed mb-6">
-                We collect a counterfactual dataset consisting of photos of scenes before and after removing an
-                object, while keeping everything else fixed. We used this dataset to finetune a diffusion model to
-                remove an object and all its effects from the scene. For the task of object insertion, we bootstrap
-                bigger dataset by removing selected objects from a large unsupervised image dataset, resulting in
-                a vast, synthetic counterfactual dataset. Training on this synthetic dataset and then fine tuning on
-                a smaller, original, supervised dataset yields a high quality object insertion model.
+                Our framework performs zero-shot object removal directly on a pre-trained diffusion model. Given an input image <i>I<sub>s</sub></i> and a binary mask <i>M</i> specifying the target objects, the model produces an edited image <i>I<sub>t</sub></i> where the masked regions are erased and seamlessly reconstructed with contextually consistent background. The process begins with latent inversion to map the input image into the noise space while preserving unaffected regions in the denoising process. We then apply <strong>Pixel-wise Attention Dissolution (PAD)</strong> to disconnect masked query pixels from their most correlated keys, effectively dissolving object information at the attention level. Next, <strong>Localized Attentional Disentanglement Guidance (LADG)</strong> steers the denoising trajectory in latent space away from the object regions, refining the reconstruction to suppress residual artifacts.
+              </p>
+              <p className="text-lg leading-relaxed mb-6">
+                Together, PAD and LADG enable precise, pixel-level control for single- and multi-object removal in a single forward pass, without any fine-tuning, prompt engineering, or inference-time optimization.
               </p>
 
-              {/* Approach Diagram placeholder */}
+              {/* Approach Diagram */}
               <div className="bg-white rounded-lg p-6 border border-gray-200">
-                <div className="aspect-[2/1] bg-gray-50 rounded flex items-center justify-center text-gray-400">
-                  <span className="text-lg">Approach Diagram</span>
-                </div>
+                <img
+                  src="/pipeline.png"
+                  alt="PANDORA Pipeline Diagram"
+                  className="w-full h-auto rounded"
+                />
               </div>
             </div>
           </div>
