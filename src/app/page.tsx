@@ -8,9 +8,13 @@ export default function Home() {
       <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-5xl font-normal leading-tight mb-8 px-4">
-            ✏️ PANDORA: Pixel-wise Attention Dissolution<br />
-            and Latent Guidance for Zero-Shot Object Removal
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-normal leading-tight mb-8 px-4 flex flex-col items-center">
+            <span className="flex items-center gap-2">
+              PANDORA
+              <img src="/eraser.svg" alt="Eraser" className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 inline-block" />
+              : Pixel-wise Attention Dissolution
+            </span>
+            <span>and Latent Guidance for Zero-Shot Object Removal</span>
           </h1>
 
           {/* Authors */}
