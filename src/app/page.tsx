@@ -9,9 +9,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           {/* Title */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-8 px-4">
-            PANDORA<br />
-            Pixel-wise Attention Dissolution<br />
-            and Latent Guidance<br />
+            PANDORA: Pixel-wise Attention Dissolution and Latent Guidance<br />
             for Zero-Shot Object Removal
           </h1>
 
