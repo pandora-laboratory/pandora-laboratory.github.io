@@ -38,20 +38,31 @@ function GalleryItemComponent({ item, isClicked, isHovered, onHover, onClick }: 
                 className="object-cover select-none"
             />
 
-            {/* Hover overlay - show mask with red tint to highlight removed object */}
+            {/* Hover overlay - show cyan highlight on masked object only */}
             {isHovered && !isClicked && (
-                <div className="absolute inset-0 pointer-events-none">
-                    {/* Mask image with red color overlay using mix-blend-mode */}
-                    <div className="absolute inset-0 bg-red-500 opacity-50 mix-blend-multiply"></div>
-                    <Image
-                        src={item.maskSrc}
-                        alt=""
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover opacity-60"
-                        style={{ mixBlendMode: 'multiply' }}
+                <svg className="absolute inset-0 pointer-events-none w-full h-full">
+                    <defs>
+                        <mask id={`mask-${item.id}`}>
+                            <image href={item.maskSrc} width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                        </mask>
+                        <filter id={`glow-${item.id}`}>
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                            <feMerge>
+                                <feMergeNode in="coloredBlur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <rect
+                        x="0"
+                        y="0"
+                        width="100%"
+                        height="100%"
+                        fill="rgba(34, 211, 238, 0.6)"
+                        mask={`url(#mask-${item.id})`}
+                        filter={`url(#glow-${item.id})`}
                     />
-                </div>
+                </svg>
             )}
 
             {/* Status indicator */}
