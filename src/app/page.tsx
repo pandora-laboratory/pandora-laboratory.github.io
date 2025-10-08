@@ -1,4 +1,5 @@
 import BeforeAfterSlider from "./components/BeforeAfterSlider";
+import HoverClickGallery from "./components/HoverClickGallery";
 import InteractiveDemo from "./components/InteractiveDemo";
 
 export default function Home() {
@@ -139,6 +140,38 @@ export default function Home() {
             <BeforeAfterSlider beforeSrc="/results/img_7_original.png" afterSrc="/results/img_7_result.png" label="" />
             <BeforeAfterSlider beforeSrc="/results/img_8_original.png" afterSrc="/results/img_8_result.png" label="" />
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Gallery Section */}
+      <section className="py-16 px-4 bg-gray-50 text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Interactive Results</h2>
+          <p className="text-lg text-center mb-6 max-w-4xl mx-auto leading-relaxed">
+            Hover over any image to see the object that will be removed, and click to toggle between original and result
+          </p>
+
+          {/* Info Box */}
+          <div className="bg-green-50 border border-green-200 rounded-lg py-4 px-6 mb-8 text-center">
+            <p className="text-green-900 flex items-center justify-center gap-2">
+              <span className="text-2xl">🖱️</span>
+              <span>Hover to highlight • Click to see results</span>
+            </p>
+          </div>
+
+          {/* Interactive Gallery */}
+          <HoverClickGallery
+            items={[
+              { id: "1", originalSrc: "/results/img_1_original.png", resultSrc: "/results/img_1_result.png", maskSrc: "/results/img_1_mask.png" },
+              { id: "2", originalSrc: "/results/img_2_original.png", resultSrc: "/results/img_2_result.png", maskSrc: "/results/img_2_mask.png" },
+              { id: "3", originalSrc: "/results/img_3_original.png", resultSrc: "/results/img_3_result.png", maskSrc: "/results/img_3_mask.png" },
+              { id: "4", originalSrc: "/results/img_4_original.png", resultSrc: "/results/img_4_result.png", maskSrc: "/results/img_4_mask.png" },
+              { id: "5", originalSrc: "/results/img_5_original.png", resultSrc: "/results/img_5_result.png", maskSrc: "/results/img_5_mask.png" },
+              { id: "6", originalSrc: "/results/img_6_original.png", resultSrc: "/results/img_6_result.png", maskSrc: "/results/img_6_mask.png" },
+              { id: "7", originalSrc: "/results/img_7_original.png", resultSrc: "/results/img_7_result.png", maskSrc: "/results/img_7_mask.png" },
+              { id: "8", originalSrc: "/results/img_8_original.png", resultSrc: "/results/img_8_result.png", maskSrc: "/results/img_8_mask.png" },
+            ]}
+          />
         </div>
       </section>
 
