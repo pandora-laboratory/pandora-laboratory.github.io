@@ -146,16 +146,16 @@ export default function Home() {
       {/* Interactive Gallery Section */}
       <section className="py-16 px-4 bg-gray-50 text-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold uppercase text-center mb-6">Interactive Results</h2>
+          {/* <h2 className="text-3xl font-bold uppercase text-center mb-6">Interactive Results</h2>
           <p className="text-lg text-center mb-6 max-w-4xl mx-auto leading-relaxed">
             Hover over any image to see the object that will be removed, and click to toggle between original and result
-          </p>
+          </p> */}
 
           {/* Info Box */}
           <div className="bg-green-50 border border-green-200 rounded-lg py-4 px-6 mb-8 text-center">
             <p className="text-green-900 flex items-center justify-center gap-2">
               <span className="text-2xl">🖱️</span>
-              <span>Hover to highlight • Click to see results</span>
+              <span>Click to see results</span>
             </p>
           </div>
 
