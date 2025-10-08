@@ -65,11 +65,6 @@ function GalleryItemComponent({ item, isClicked, isHovered, onHover, onClick }: 
                 </svg>
             )}
 
-            {/* Status indicator */}
-            <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-medium">
-                {isClicked ? "Result" : "Original"}
-            </div>
-
             {/* Hover hint */}
             {isHovered && !isClicked && (
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-black/80 text-white text-sm font-medium whitespace-nowrap">
