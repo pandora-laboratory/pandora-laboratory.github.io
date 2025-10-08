@@ -87,7 +87,9 @@ export default function BeforeAfterSlider({
 
             {/* Before image (clipped) */}
             <div className="absolute inset-0 overflow-hidden" style={{ width: clipWidth }}>
-                <Image src={beforeSrc} alt={alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover select-none" />
+                <div className="relative w-full h-full" style={{ width: containerWidth }}>
+                    <Image src={beforeSrc} alt={alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover select-none" />
+                </div>
             </div>
 
             {/* Divider line */}
