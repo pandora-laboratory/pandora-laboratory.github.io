@@ -9,7 +9,6 @@ type BeforeAfterSliderProps = {
     alt?: string;
     label?: string;
     className?: string;
-    aspectRatio?: number; // width / height
 };
 
 export default function BeforeAfterSlider({
@@ -18,7 +17,6 @@ export default function BeforeAfterSlider({
     alt = "",
     label,
     className,
-    aspectRatio = 16 / 9,
 }: BeforeAfterSliderProps) {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [positionPx, setPositionPx] = useState<number | null>(null);
@@ -78,8 +76,7 @@ export default function BeforeAfterSlider({
 
     return (
         <figure
-            className={`relative overflow-hidden rounded bg-zinc-100 dark:bg-zinc-900 ${className ?? ""}`}
-            style={{ aspectRatio: `${aspectRatio}` }}
+            className={`relative overflow-hidden rounded bg-zinc-100 dark:bg-zinc-900 aspect-square ${className ?? ""}`}
             ref={containerRef}
         >
             {/* After image (full) */}
