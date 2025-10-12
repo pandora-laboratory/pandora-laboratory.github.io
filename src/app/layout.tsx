@@ -13,9 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Complete Object Removal via Object-Effect Attention",
+  title: "PANDORA: Pixel-wise Attention Dissolution and Latent Guidance for Zero-Shot Object Removal",
   description:
-    "ObjectClear: Complete object removal via object-effect attention with OBER dataset.",
+    "PANDORA: A zero-shot object removal framework that operates directly on pre-trained diffusion models using Pixel-wise Attention Dissolution and Localized Attentional Disentanglement Guidance.",
+  icons: {
+    icon: "/eraser.svg",
+    shortcut: "/eraser.svg",
+    apple: "/eraser.svg",
+  },
 };
 
 export default function RootLayout({
