@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type BeforeAfterSliderProps = {
@@ -76,16 +75,16 @@ export default function BeforeAfterSlider({
 
     return (
         <figure
-            className={`relative overflow-hidden rounded bg-zinc-100 dark:bg-zinc-900 aspect-square ${className ?? ""}`}
+            className={`relative overflow-hidden rounded bg-zinc-100 dark:bg-zinc-900 inline-block ${className ?? ""}`}
             ref={containerRef}
         >
             {/* After image (full) */}
-            <Image src={afterSrc} alt={alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover select-none" />
+            <img src={afterSrc} alt={alt} className="block select-none" />
 
             {/* Before image (clipped) */}
             <div className="absolute inset-0 overflow-hidden" style={{ width: clipWidth }}>
-                <div className="relative w-full h-full" style={{ width: containerWidth }}>
-                    <Image src={beforeSrc} alt={alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover select-none" />
+                <div className="relative" style={{ width: containerWidth }}>
+                    <img src={beforeSrc} alt={alt} className="w-full h-auto select-none block" />
                 </div>
             </div>
 

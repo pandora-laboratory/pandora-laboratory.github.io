@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 type GalleryItem = {
@@ -24,34 +23,32 @@ function GalleryItemComponent({ item, isClicked, isHovered, onHover, onClick }: 
 }) {
     return (
         <div
-            className="relative aspect-square rounded-lg overflow-hidden cursor-pointer bg-gray-100 shadow-md hover:shadow-xl transition-shadow"
+            className="relative rounded-lg overflow-hidden cursor-pointer bg-gray-100 shadow-md hover:shadow-xl transition-shadow inline-block"
             onMouseEnter={() => onHover(true)}
             onMouseLeave={() => onHover(false)}
             onClick={onClick}
         >
             {/* Base image (original or result based on click state) */}
-            <Image
+            <img
                 src={isClicked ? item.resultSrc : item.originalSrc}
                 alt=""
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover select-none"
+                className="block select-none"
             />
 
-            {/* Hover overlay - show cyan highlight on masked object only */}
+            {/* Hover overlay - cyan only on masked (white) areas */}
             {isHovered && !isClicked && (
-                <svg className="absolute inset-0 pointer-events-none w-full h-full">
+                <svg className="absolute inset-0 pointer-events-none" style={{ width: "100%", height: "100%" }}>
                     <defs>
-                        <mask id={`mask-${item.id}`}>
-                            <image href={item.maskSrc} width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+                        <mask id={`mask-${item.id}`} maskUnits="userSpaceOnUse">
+                            <image
+                                href={item.maskSrc}
+                                x="0"
+                                y="0"
+                                width="100%"
+                                height="100%"
+                                preserveAspectRatio="none"
+                            />
                         </mask>
-                        <filter id={`glow-${item.id}`}>
-                            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                            <feMerge>
-                                <feMergeNode in="coloredBlur" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
                     </defs>
                     <rect
                         x="0"
@@ -60,7 +57,6 @@ function GalleryItemComponent({ item, isClicked, isHovered, onHover, onClick }: 
                         height="100%"
                         fill="rgba(34, 211, 238, 0.6)"
                         mask={`url(#mask-${item.id})`}
-                        filter={`url(#glow-${item.id})`}
                     />
                 </svg>
             )}
