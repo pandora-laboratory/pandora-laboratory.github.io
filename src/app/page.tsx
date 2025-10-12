@@ -175,6 +175,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Qualitative Comparison Section */}
+      <section className="py-16 px-4 bg-white text-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Qualitative Comparison</h2>
+
+          {/* Enhanced Caption with Icons */}
+          <div className="max-w-5xl mx-auto mb-8">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+              <p className="text-lg text-center mb-4 text-blue-900">
+                <span className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-2xl">🔬</span>
+                  <span className="font-semibold">Qualitative comparison on various object removal scenarios</span>
+                </span>
+                <span className="flex items-center justify-center gap-2 text-base">
+                  <span className="text-xl">📊</span>
+                  <span>From left to right: original image with a mask, and results from different methods</span>
+                </span>
+              </p>
+            </div>
+
+            {/* Scenario Breakdown */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+                <div className="text-2xl mb-2">🎯</div>
+                <h3 className="font-semibold text-green-900 mb-1">Single-Object Removal</h3>
+                <p className="text-sm text-green-700">Top two rows</p>
+              </div>
+              <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center">
+                <div className="text-2xl mb-2">🎯🎯</div>
+                <h3 className="font-semibold text-orange-900 mb-1">Multi-Object Cases</h3>
+                <p className="text-sm text-orange-700">Middle two rows</p>
+              </div>
+              <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
+                <div className="text-2xl mb-2">🎯🎯🎯</div>
+                <h3 className="font-semibold text-purple-900 mb-1">Mass-Similar Objects</h3>
+                <p className="text-sm text-purple-700">Bottom two rows</p>
+              </div>
+            </div>
+
+            {/* Zero-shot Methods Highlight */}
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+              <p className="text-gray-800">
+                <span className="text-xl mr-2">⚡</span>
+                <span className="font-semibold">Zero-shot methods</span> shown in the last three columns, with the <span className="font-bold text-blue-600">last column showing our PANDORA method</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Qualitative Comparison Image */}
+          <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+            <img
+              src="/qualitative.png"
+              alt="Qualitative comparison of object removal methods"
+              className="w-full h-auto rounded shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Approach Section */}
       <section className="py-16 px-4 bg-gray-100 text-gray-900">
         <div className="max-w-6xl mx-auto">
