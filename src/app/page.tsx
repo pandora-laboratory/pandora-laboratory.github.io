@@ -229,6 +229,9 @@ export default function Home() {
           <div className="flex gap-8">
             <h2 className="text-3xl font-bold uppercase min-w-fit">Acknowledgment</h2>
             <div className="flex-1">
+              <p className="text-lg leading-relaxed mb-4">
+                We extend our heartfelt gratitude to all participants who took part in our comprehensive user study. Your valuable time, thoughtful feedback, and detailed evaluations were instrumental in validating the effectiveness and usability of our PANDORA framework. Your insights helped us understand the practical impact of our zero-shot object removal approach and provided crucial evidence of its superiority over existing methods.
+              </p>
               <p className="text-lg leading-relaxed">
                 This website design is inspired by{" "}
                 <a
