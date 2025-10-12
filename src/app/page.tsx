@@ -288,20 +288,35 @@ export default function Home() {
           <div className="flex gap-8">
             <h2 className="text-3xl font-bold uppercase min-w-fit">Acknowledgment</h2>
             <div className="flex-1">
-              <p className="text-lg leading-relaxed mb-4">
-                We extend our heartfelt gratitude to all participants who took part in our comprehensive user study. Your valuable time, thoughtful feedback, and detailed evaluations were instrumental in validating the effectiveness and usability of our PANDORA framework. Your insights helped us understand the practical impact of our zero-shot object removal approach and provided crucial evidence of its superiority over existing methods.
-              </p>
-              <p className="text-lg leading-relaxed">
-                This website design is inspired by{" "}
-                <a
-                  href="https://objectdrop.github.io/"
-                  className="text-blue-600 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ObjectDrop
-                </a>. We thank the authors for their excellent work.
-              </p>
+              {/* User Study Participants */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">🙏</span>
+                  <h3 className="text-xl font-semibold text-blue-900">User Study Participants</h3>
+                </div>
+                <p className="text-lg leading-relaxed text-blue-800">
+                  We extend our heartfelt gratitude to all participants who took part in our comprehensive user study. Your valuable time, thoughtful feedback, and detailed evaluations were instrumental in validating the effectiveness and usability of our PANDORA framework. Your insights helped us understand the practical impact of our zero-shot object removal approach and provided crucial evidence of its superiority over existing methods.
+                </p>
+              </div>
+
+              {/* Website Design Credit */}
+              <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">🎨</span>
+                  <h3 className="text-xl font-semibold text-green-900">Website Design Inspiration</h3>
+                </div>
+                <p className="text-lg leading-relaxed text-green-800">
+                  This website design is inspired by{" "}
+                  <a
+                    href="https://objectdrop.github.io/"
+                    className="text-blue-600 hover:underline font-semibold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ObjectDrop
+                  </a>. We thank the authors for their excellent work and creative design approach.
+                </p>
+              </div>
             </div>
           </div>
         </div>
