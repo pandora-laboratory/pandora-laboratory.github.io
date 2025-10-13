@@ -1,6 +1,7 @@
 import BeforeAfterSlider from "./components/BeforeAfterSlider";
 import HoverClickGallery from "./components/HoverClickGallery";
 import InteractiveDemo from "./components/InteractiveDemo";
+import QuantitativeTable from "./components/QuantitativeTable";
 
 export default function Home() {
   return (
@@ -256,6 +257,16 @@ export default function Home() {
               alt="Qualitative comparison of object removal methods"
               className="w-full h-auto rounded shadow-lg"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Quantitative Comparison Section */}
+      <section className="py-16 px-4 bg-gray-50 text-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Quantitative Comparison</h2>
+          <div className="bg-white rounded-lg p-6 border border-gray-200">
+            <QuantitativeTable />
           </div>
         </div>
       </section>
