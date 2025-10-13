@@ -179,24 +179,22 @@ export default function Home() {
       {/* Approach Section */}
       <section className="py-16 px-4 bg-gray-100 text-gray-900">
         <div className="max-w-6xl mx-auto">
-          <div className="flex gap-8">
-            <h2 className="text-3xl font-bold uppercase min-w-fit">Approach</h2>
-            <div>
-              <p className="text-lg leading-relaxed mb-6">
-                Our framework performs zero-shot object removal directly on a pre-trained diffusion model. Given an input image <i>I<sub>s</sub></i> and a binary mask <i>M</i> specifying the target objects, the model produces an edited image <i>I<sub>t</sub></i> where the masked regions are erased and seamlessly reconstructed with contextually consistent background. The process begins with latent inversion to map the input image into the noise space while preserving unaffected regions in the denoising process. We then apply <strong>Pixel-wise Attention Dissolution (PAD)</strong> to disconnect masked query pixels from their most correlated keys, effectively dissolving object information at the attention level. Next, <strong>Localized Attentional Disentanglement Guidance (LADG)</strong> steers the denoising trajectory in latent space away from the object regions, refining the reconstruction to suppress residual artifacts.
-              </p>
-              <p className="text-lg leading-relaxed mb-6">
-                Together, PAD and LADG enable precise, pixel-level control for single- and multi-object removal in a single forward pass, without any fine-tuning, prompt engineering, or inference-time optimization.
-              </p>
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Approach</h2>
+          <div>
+            <p className="text-lg leading-relaxed mb-6">
+              Our framework performs zero-shot object removal directly on a pre-trained diffusion model. Given an input image <i>I<sub>s</sub></i> and a binary mask <i>M</i> specifying the target objects, the model produces an edited image <i>I<sub>t</sub></i> where the masked regions are erased and seamlessly reconstructed with contextually consistent background. The process begins with latent inversion to map the input image into the noise space while preserving unaffected regions in the denoising process. We then apply <strong>Pixel-wise Attention Dissolution (PAD)</strong> to disconnect masked query pixels from their most correlated keys, effectively dissolving object information at the attention level. Next, <strong>Localized Attentional Disentanglement Guidance (LADG)</strong> steers the denoising trajectory in latent space away from the object regions, refining the reconstruction to suppress residual artifacts.
+            </p>
+            <p className="text-lg leading-relaxed mb-6">
+              Together, PAD and LADG enable precise, pixel-level control for single- and multi-object removal in a single forward pass, without any fine-tuning, prompt engineering, or inference-time optimization.
+            </p>
 
-              {/* Approach Diagram */}
-              <div className="bg-white rounded-lg p-6 border border-gray-200">
-                <img
-                  src="/pipeline.png"
-                  alt="PANDORA Pipeline Diagram"
-                  className="w-full h-auto rounded"
-                />
-              </div>
+            {/* Approach Diagram */}
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <img
+                src="/pipeline.png"
+                alt="PANDORA Pipeline Diagram"
+                className="w-full h-auto rounded"
+              />
             </div>
           </div>
         </div>
@@ -296,38 +294,36 @@ export default function Home() {
       {/* Acknowledgment Section */}
       <section className="py-16 px-4 bg-gray-200 text-gray-900">
         <div className="max-w-6xl mx-auto">
-          <div className="flex gap-8">
-            <h2 className="text-3xl font-bold uppercase min-w-fit">Acknowledgment</h2>
-            <div className="flex-1">
-              {/* User Study Participants */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl">🙏</span>
-                  <h3 className="text-xl font-semibold text-blue-900">User Study Participants</h3>
-                </div>
-                <p className="text-lg leading-relaxed text-blue-800">
-                  We extend our heartfelt gratitude to all participants who took part in our comprehensive user study. Your valuable time, thoughtful feedback, and detailed evaluations were instrumental in validating the effectiveness and usability of our PANDORA framework. Your insights helped us understand the practical impact of our zero-shot object removal approach and provided crucial evidence of its superiority over existing methods.
-                </p>
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Acknowledgment</h2>
+          <div className="flex-1">
+            {/* User Study Participants */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🙏</span>
+                <h3 className="text-xl font-semibold text-blue-900">User Study Participants</h3>
               </div>
+              <p className="text-lg leading-relaxed text-blue-800">
+                We extend our heartfelt gratitude to all participants who took part in our comprehensive user study. Your valuable time, thoughtful feedback, and detailed evaluations were instrumental in validating the effectiveness and usability of our PANDORA framework. Your insights helped us understand the practical impact of our zero-shot object removal approach and provided crucial evidence of its superiority over existing methods.
+              </p>
+            </div>
 
-              {/* Website Design Credit */}
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl">🎨</span>
-                  <h3 className="text-xl font-semibold text-green-900">Website Design Inspiration</h3>
-                </div>
-                <p className="text-lg leading-relaxed text-green-800">
-                  This website design is inspired by{" "}
-                  <a
-                    href="https://objectdrop.github.io/"
-                    className="text-blue-600 hover:underline font-semibold"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ObjectDrop
-                  </a>. We thank the authors for their excellent work and creative design approach.
-                </p>
+            {/* Website Design Credit */}
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🎨</span>
+                <h3 className="text-xl font-semibold text-green-900">Website Design Inspiration</h3>
               </div>
+              <p className="text-lg leading-relaxed text-green-800">
+                This website design is inspired by{" "}
+                <a
+                  href="https://objectdrop.github.io/"
+                  className="text-blue-600 hover:underline font-semibold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ObjectDrop
+                </a>. We thank the authors for their excellent work and creative design approach.
+              </p>
             </div>
           </div>
         </div>
