@@ -118,20 +118,20 @@ export default function Home() {
       <section className="py-16 px-4 bg-white text-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold uppercase text-center mb-6">Object Removal</h2>
-          <p className="text-lg text-center mb-6 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-center max-w-4xl mx-auto leading-relaxed">
             We propose a zero-shot object removal framework that operates directly on pre-trained diffusion models in a single pass, without any fine-tuning, prompt engineering, or inference-time optimization, thus fully leveraging their latent generative capacity for inpainting
           </p>
 
           {/* Info Box */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg py-4 px-6 mb-8 text-center">
+          {/* <div className="bg-blue-50 border border-blue-200 rounded-lg py-4 px-6 mb-8 text-center">
             <p className="text-blue-900 flex items-center justify-center gap-2">
               <span className="text-2xl">👆</span>
               <span>Slide any image to see results</span>
             </p>
-          </div>
+          </div> */}
 
           {/* Image Gallery Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <BeforeAfterSlider beforeSrc="/results/img_1_original.png" afterSrc="/results/img_1_result.png" label="" />
             <BeforeAfterSlider beforeSrc="/results/img_2_original.png" afterSrc="/results/img_2_result.png" label="" />
             <BeforeAfterSlider beforeSrc="/results/img_3_original.png" afterSrc="/results/img_3_result.png" label="" />
@@ -140,12 +140,12 @@ export default function Home() {
             <BeforeAfterSlider beforeSrc="/results/img_6_original.png" afterSrc="/results/img_6_result.png" label="" />
             <BeforeAfterSlider beforeSrc="/results/img_7_original.png" afterSrc="/results/img_7_result.png" label="" />
             <BeforeAfterSlider beforeSrc="/results/img_8_original.png" afterSrc="/results/img_8_result.png" label="" />
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Interactive Gallery Section */}
-      <section className="py-16 px-4 bg-gray-50 text-gray-900">
+      <section className="pt-2 pb-16 px-4 bg-gray-50 text-gray-900">
         <div className="max-w-6xl mx-auto">
           {/* <h2 className="text-3xl font-bold uppercase text-center mb-6">Interactive Results</h2>
           <p className="text-lg text-center mb-6 max-w-4xl mx-auto leading-relaxed">
