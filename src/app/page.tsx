@@ -60,26 +60,33 @@ export default function Home() {
           */}
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-8 mb-12">
             <a
-              href="#"
+              href="/PANDORA.pdf"
               className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
+              rel="noopener noreferrer"
             >
               PDF
             </a>
             <a
               href="#"
-              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
+              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors cursor-not-allowed opacity-75 relative"
+              title="Coming soon"
             >
-              ARXIV
+              arXiv
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1 py-0.5 rounded-full font-bold transform rotate-12">
+                Soon
+              </span>
             </a>
             <a
-              href="https://github.com/padora-research/padora-research.github.io"
-              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
+              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors cursor-not-allowed opacity-75 relative"
+              title="Coming soon"
             >
               Code
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1 py-0.5 rounded-full font-bold transform rotate-12">
+                Soon
+              </span>
             </a>
           </div>
 
