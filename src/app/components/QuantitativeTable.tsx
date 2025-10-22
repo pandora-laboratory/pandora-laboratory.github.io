@@ -17,12 +17,19 @@ const fineTuningRows: Row[] = [
     { method: "SD2-Inpaint-wprompt", usesText: true, fid: 18.01, lpips: 0.1098, mse: 0.0072, clip: 24.32 },
 ];
 
-const zeroShotRows: Row[] = [
+const zeroShotSD21Rows: Row[] = [
+    { method: "CPAM", usesText: false, fid: 25.25, lpips: 0.0953, mse: 0.0048, clip: 24.49 },
+    { method: "PANDORA w/o PAD (Ours)", usesText: false, fid: 27.3, lpips: 0.0985, mse: 0.005, clip: 24.58, highlight: true },
+    { method: "PANDORA w/o LADG (Ours)", usesText: false, fid: 30.8, lpips: 0.1007, mse: 0.0055, clip: 24.65, highlight: true },
+    { method: "PANDORA (Ours)", usesText: false, fid: 35.1, lpips: 0.1064, mse: 0.0059, clip: "24.69", highlight: true },
+];
+
+const zeroShotSD15Rows: Row[] = [
     { method: "CPAM", usesText: false, fid: 29.54, lpips: 0.1564, mse: 0.0138, clip: 24.32 },
     { method: "Attentive Eraser", usesText: false, fid: 118.09, lpips: 0.2567, mse: 0.0270, clip: 24.42 },
-    { method: "PANDORA w/o LADG (Ours)", usesText: false, fid: 42.17, lpips: 0.1844, mse: 0.0171, clip: 24.55, highlight: true },
     { method: "PANDORA w/o PAD (Ours)", usesText: false, fid: 35.59, lpips: 0.1702, mse: 0.0156, clip: 24.4, highlight: true },
-    { method: "PANDORA (Ours)", usesText: false, fid: 44.98, lpips: 0.1895, mse: 0.0184, clip: "24.57", highlight: true },
+    { method: "PANDORA w/o LADG (Ours)", usesText: false, fid: 42.17, lpips: 0.1844, mse: 0.0171, clip: 24.55, highlight: true },
+    { method: "PANDORA (Ours)", usesText: false, fid: 44.98, lpips: 0.1895, mse: 0.0184, clip: 24.57, highlight: true },
 ];
 
 const toNumber = (v: number | string): number => {
@@ -30,7 +37,7 @@ const toNumber = (v: number | string): number => {
     return Number.isFinite(n) ? n : NaN;
 };
 
-const allRows: Row[] = [...fineTuningRows, ...zeroShotRows];
+const allRows: Row[] = [...fineTuningRows, ...zeroShotSD21Rows, ...zeroShotSD15Rows];
 const bestValues = {
     fid: Math.min(...allRows.map((r) => toNumber(r.fid))),
     lpips: Math.min(...allRows.map((r) => toNumber(r.lpips))),
@@ -87,8 +94,9 @@ export default function QuantitativeTable() {
                     </tr>
                 </thead>
 
-                <TableSection title="Fine-tuning-based methods" rows={fineTuningRows} />
-                <TableSection title="Zero-shot methods (no training required)" rows={zeroShotRows} />
+                <TableSection title="Fine-tuning-based methods (SD 2.1 backbone, except LaMa)" rows={fineTuningRows} />
+                <TableSection title="Zero-shot methods (no retraining, SD 2.1 backbone)" rows={zeroShotSD21Rows} />
+                <TableSection title="Zero-shot methods (no retraining, SD 1.5 backbone)" rows={zeroShotSD15Rows} />
             </table>
 
             <div className="max-w-4xl mx-auto mt-4">
@@ -118,7 +126,7 @@ export default function QuantitativeTable() {
                     </div>
 
                     <p className="mt-3 text-center text-blue-800">
-                        Quantitative comparison averaged across all dataset types. PANDORA delivers strong background realism among zero-shot methods while achieving superior object removal quality.
+                        Quantitative comparison of fine-tuned and zero-shot object removal methods averaged across all dataset types. PANDORA consistently achieves the best object removal quality with competitive background realism, without any retraining or textual prompts, demonstrating strong generalization across both Stable Diffusion v1.5 and v2.1 backbones. Removing LADG slightly reduces removal quality, while removing PAD causes a significant degradation.
                     </p>
                 </div>
             </div>
