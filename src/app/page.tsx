@@ -127,6 +127,14 @@ export default async function Home() {
                 Soon
               </span>
             </a>
+            <a
+              href="https://ae5c86b090ef046c84.gradio.live/"
+              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Gradio Demo
+            </a>
           </div>
 
           {/* Hero Video Demo */}
