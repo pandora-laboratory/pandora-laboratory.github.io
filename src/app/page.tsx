@@ -2,8 +2,47 @@ import BeforeAfterSlider from "./components/BeforeAfterSlider";
 import HoverClickGallery from "./components/HoverClickGallery";
 import InteractiveDemo from "./components/InteractiveDemo";
 import QuantitativeTable from "./components/QuantitativeTable";
+import fs from "fs";
+import path from "path";
 
-export default function Home() {
+export default async function Home() {
+  // Discover all result triplets in public/results at build/render time
+  const resultsDir = path.join(process.cwd(), "public", "results");
+  let galleryItems: { id: string; originalSrc: string; resultSrc: string; maskSrc: string }[] = [];
+  try {
+    const entries = await fs.promises.readdir(resultsDir);
+    const tripletPresence: Record<string, { original: boolean; result: boolean; mask: boolean }> = {};
+
+    const filenamePattern = /^img_(\d+)_(original|result|mask)\.png$/;
+    for (const name of entries) {
+      const match = name.match(filenamePattern);
+      if (!match) continue;
+      const index = match[1];
+      const kind = match[2] as "original" | "result" | "mask";
+      if (!tripletPresence[index]) {
+        tripletPresence[index] = { original: false, result: false, mask: false };
+      }
+      tripletPresence[index][kind] = true;
+    }
+
+    const indices = Object.keys(tripletPresence)
+      .filter((k) => {
+        const t = tripletPresence[k];
+        return t.original && t.result && t.mask;
+      })
+      .map((k) => Number(k))
+      .sort((a, b) => a - b);
+
+    galleryItems = indices.map((i) => ({
+      id: String(i),
+      originalSrc: `/results/img_${i}_original.png`,
+      resultSrc: `/results/img_${i}_result.png`,
+      maskSrc: `/results/img_${i}_mask.png`,
+    }));
+  } catch {
+    galleryItems = [];
+  }
+
   return (
     <div className="min-h-screen bg-slate-700 text-white">
       {/* Hero Section */}
@@ -168,18 +207,7 @@ export default function Home() {
           </div>
 
           {/* Interactive Gallery */}
-          <HoverClickGallery
-            items={[
-              { id: "1", originalSrc: "/results/img_1_original.png", resultSrc: "/results/img_1_result.png", maskSrc: "/results/img_1_mask.png" },
-              { id: "2", originalSrc: "/results/img_2_original.png", resultSrc: "/results/img_2_result.png", maskSrc: "/results/img_2_mask.png" },
-              { id: "3", originalSrc: "/results/img_3_original.png", resultSrc: "/results/img_3_result.png", maskSrc: "/results/img_3_mask.png" },
-              { id: "4", originalSrc: "/results/img_4_original.png", resultSrc: "/results/img_4_result.png", maskSrc: "/results/img_4_mask.png" },
-              { id: "5", originalSrc: "/results/img_5_original.png", resultSrc: "/results/img_5_result.png", maskSrc: "/results/img_5_mask.png" },
-              { id: "6", originalSrc: "/results/img_6_original.png", resultSrc: "/results/img_6_result.png", maskSrc: "/results/img_6_mask.png" },
-              { id: "7", originalSrc: "/results/img_7_original.png", resultSrc: "/results/img_7_result.png", maskSrc: "/results/img_7_mask.png" },
-              { id: "8", originalSrc: "/results/img_8_original.png", resultSrc: "/results/img_8_result.png", maskSrc: "/results/img_8_mask.png" },
-            ]}
-          />
+          <HoverClickGallery items={galleryItems} />
         </div>
       </section>
 
