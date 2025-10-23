@@ -286,7 +286,7 @@ export default async function Home() {
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
               <p className="text-gray-800">
                 <span className="text-xl mr-2">⚡</span>
-                <span className="font-semibold">Zero-shot methods</span> shown in the last three columns, with the <span className="font-bold text-blue-600">last column showing our PANDORA method</span>
+                <span className="font-semibold">Zero-shot methods</span> shown in the last four columns, with the <span className="font-bold text-blue-600">last two columns showing our PANDORA method</span>
               </p>
             </div>
           </div>
