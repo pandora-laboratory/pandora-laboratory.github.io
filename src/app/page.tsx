@@ -135,6 +135,15 @@ export default async function Home() {
             >
               Gradio Demo
             </a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf6j6FOHiCdcZJJJ5DVRVgFTxIPTzEH91o2XVbsFNU6Xpp9Ig/viewform"
+              className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors flex items-center gap-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>💬</span>
+              Feedback
+            </a>
           </div>
 
           {/* Hero Video Demo */}
