@@ -359,12 +359,12 @@ export default async function Home() {
               <p className="text-lg leading-relaxed text-green-800">
                 This website design is inspired by{" "}
                 <a
-                  href="https://objectdrop.github.io/"
+                  href="https://huggingface.co/spaces/xichenhku/MimicBrush/tree/main"
                   className="text-blue-600 hover:underline font-semibold"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  ObjectDrop
+                  MimicBrush
                 </a>. We thank the authors for their excellent work and creative design approach.
               </p>
             </div>
