@@ -128,7 +128,7 @@ export default async function Home() {
               </span>
             </a>
             <a
-              href="https://afc10232f9ecf373e0.gradio.live/"
+              href="https://34073b8ed93b402b10.gradio.live/"
               className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
@@ -351,13 +351,32 @@ export default async function Home() {
             </div>
 
             {/* Website Design Credit */}
-            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">🎨</span>
                 <h3 className="text-xl font-semibold text-green-900">Website Design Inspiration</h3>
               </div>
               <p className="text-lg leading-relaxed text-green-800">
                 This website design is inspired by{" "}
+                <a
+                  href="https://objectdrop.github.io/"
+                  className="text-blue-600 hover:underline font-semibold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ObjectDrop
+                </a>. We thank the authors for their excellent work and creative design approach.
+              </p>
+            </div>
+
+            {/* Demo Design Credit */}
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🚀</span>
+                <h3 className="text-xl font-semibold text-purple-900">Demo Design Inspiration</h3>
+              </div>
+              <p className="text-lg leading-relaxed text-purple-800">
+                Our Gradio demo design is inspired by{" "}
                 <a
                   href="https://huggingface.co/spaces/xichenhku/MimicBrush/tree/main"
                   className="text-blue-600 hover:underline font-semibold"
