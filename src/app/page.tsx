@@ -149,7 +149,7 @@ export default async function Home() {
           {/* Hero Video Demo */}
           <div className="max-w-4xl mx-auto bg-gray-100 rounded-lg p-8">
             <h2 className="text-3xl text-gray-700 font-light mb-6">Demo Video</h2>
-            <div className="aspect-video bg-white rounded overflow-hidden">
+            <div className="aspect-video bg-white rounded overflow-hidden relative">
               <video
                 className="w-full h-full object-cover"
                 controls
@@ -160,6 +160,13 @@ export default async function Home() {
                 <source src="/demo_video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              {/* Video Labels */}
+              <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-medium">
+                Original
+              </div>
+              <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-medium">
+                Result
+              </div>
             </div>
           </div>
         </div>
@@ -220,6 +227,10 @@ export default async function Home() {
             <p className="text-green-900 flex items-center justify-center gap-2">
               <span className="text-2xl">🖱️</span>
               <span>Click to see results</span>
+            </p>
+            <p className="text-green-700 text-sm mt-2 flex items-center justify-center gap-2">
+              <span className="text-lg">⏱️</span>
+              <span>Processing takes ~10 seconds - please be patient!</span>
             </p>
           </div>
 

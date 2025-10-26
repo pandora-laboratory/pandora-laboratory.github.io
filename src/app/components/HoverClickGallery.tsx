@@ -14,10 +14,11 @@ type HoverClickGalleryProps = {
     className?: string;
 };
 
-function GalleryItemComponent({ item, isClicked, isHovered, onHover, onClick }: {
+function GalleryItemComponent({ item, isClicked, isHovered, isLoading, onHover, onClick }: {
     item: GalleryItem;
     isClicked: boolean;
     isHovered: boolean;
+    isLoading: boolean;
     onHover: (hover: boolean) => void;
     onClick: () => void;
 }) {
@@ -35,8 +36,19 @@ function GalleryItemComponent({ item, isClicked, isHovered, onHover, onClick }: 
                 className="block select-none"
             />
 
+            {/* Loading overlay */}
+            {isLoading && (
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <div className="text-center text-white">
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
+                        <div className="text-sm font-medium">Processing...</div>
+                        <div className="text-xs opacity-75">Please wait ~10 seconds</div>
+                    </div>
+                </div>
+            )}
+
             {/* Hover overlay - cyan only on masked (white) areas */}
-            {isHovered && !isClicked && (
+            {isHovered && !isClicked && !isLoading && (
                 <svg className="absolute inset-0 pointer-events-none" style={{ width: "100%", height: "100%" }}>
                     <defs>
                         <mask id={`mask-${item.id}`} maskUnits="userSpaceOnUse">
@@ -62,7 +74,7 @@ function GalleryItemComponent({ item, isClicked, isHovered, onHover, onClick }: 
             )}
 
             {/* Hover hint */}
-            {isHovered && !isClicked && (
+            {isHovered && !isClicked && !isLoading && (
                 <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-black/80 text-white text-sm font-medium whitespace-nowrap">
                     Click to see result
                 </div>
@@ -74,23 +86,36 @@ function GalleryItemComponent({ item, isClicked, isHovered, onHover, onClick }: 
 export default function HoverClickGallery({ items, className }: HoverClickGalleryProps) {
     const [hoveredId, setHoveredId] = useState<string | null>(null);
     const [clickedIds, setClickedIds] = useState<Set<string>>(new Set());
+    const [loadingIds, setLoadingIds] = useState<Set<string>>(new Set());
 
     const handleClick = (id: string) => {
-        setClickedIds((prev) => {
-            const newSet = new Set(prev);
-            if (newSet.has(id)) {
+        // If already clicked, toggle back to original
+        if (clickedIds.has(id)) {
+            setClickedIds((prev) => {
+                const newSet = new Set(prev);
                 newSet.delete(id);
-            } else {
-                newSet.add(id);
-            }
-            return newSet;
-        });
+                return newSet;
+            });
+        } else {
+            // Show loading state
+            setLoadingIds((prev) => new Set(prev).add(id));
+
+            // Simulate processing time (10 seconds as mentioned in feedback)
+            setTimeout(() => {
+                setLoadingIds((prev) => {
+                    const newSet = new Set(prev);
+                    newSet.delete(id);
+                    return newSet;
+                });
+                setClickedIds((prev) => new Set(prev).add(id));
+            }, 10000);
+        }
     };
 
     const handleHover = (id: string | null) => {
         setHoveredId(id);
-        // Reset click state when mouse leaves
-        if (id === null) {
+        // Reset click state when mouse leaves (but not if loading)
+        if (id === null && !loadingIds.has(hoveredId || '')) {
             setClickedIds(new Set());
         }
     };
@@ -103,6 +128,7 @@ export default function HoverClickGallery({ items, className }: HoverClickGaller
                     item={item}
                     isClicked={clickedIds.has(item.id)}
                     isHovered={hoveredId === item.id}
+                    isLoading={loadingIds.has(item.id)}
                     onHover={(hover) => handleHover(hover ? item.id : null)}
                     onClick={() => handleClick(item.id)}
                 />
