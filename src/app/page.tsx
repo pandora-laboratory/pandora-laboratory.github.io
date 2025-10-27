@@ -128,7 +128,7 @@ export default async function Home() {
               </span>
             </a>
             <a
-              href="https://34073b8ed93b402b10.gradio.live/"
+              href="https://4e5fb5a771209acf2f.gradio.live/"
               className="px-6 py-3 bg-slate-600 hover:bg-slate-500 rounded border border-slate-500 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
