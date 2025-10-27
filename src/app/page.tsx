@@ -59,27 +59,30 @@ export default async function Home() {
           </h1>
 
           {/* Authors */}
-          <div className="text-lg md:text-xl mb-8">
-            Anonymous authors
-          </div>
-
-          {/* Authors - Commented for anonymous submission
           <div className="text-lg md:text-xl mb-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <span>
-              Dinh-Khoi Vo<sup>1,2,3</sup>
+              <a href="https://orcid.org/0000-0001-8831-8846" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
+                Dinh-Khoi Vo
+              </a><sup>1,2,3</sup>
             </span>
             <span>
-              Van-Loc Nguyen<sup>1,2,3</sup>
+              <a href="https://orcid.org/0000-0001-9351-3750" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
+                Van-Loc Nguyen
+              </a><sup>1,2,3</sup>
             </span>
             <span>
-              Minh-Triet Tran<sup>1,2,3</sup>
+              <a href="https://orcid.org/0000-0003-3046-3041" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
+                Minh-Triet Tran
+              </a><sup>1,2,3</sup>
             </span>
             <span>
-              Trung-Nghia Le<sup>1,2,3</sup>
+              <a href="https://orcid.org/0000-0002-7363-2610" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
+                Trung-Nghia Le
+              </a><sup>1,2,3</sup>
             </span>
           </div>
 
-          {/* Affiliations - Commented for anonymous submission
+          {/* Affiliations */}
           <div className="text-base md:text-lg mb-4 flex flex-col items-center justify-center gap-y-2">
             <span>
               <sup>1</sup>Faculty of Information Technology, University of Science, VNU-HCM, Ho Chi Minh City, Vietnam
@@ -92,11 +95,10 @@ export default async function Home() {
             </span>
           </div>
 
-          {/* Conference - Commented for anonymous submission
-          <div className="text-xl md:text-2xl font-semibold mb-8">
-            ECCV 2024
+          {/* Email */}
+          <div className="text-base mb-8 italic">
+            &#123;vdkhoi, nvloc&#125;@selab.hcmus.edu.vn, &#123;tmtriet, ltnghia&#125;@fit.hcmus.edu.vn
           </div>
-          */}
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-8 mb-12">
