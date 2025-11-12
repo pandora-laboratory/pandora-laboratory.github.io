@@ -102,7 +102,7 @@ export default async function Home() {
 
           {/* Email */}
           <div className="text-base mb-8 italic">
-            &#123;vdkhoi, nvloc&#125;@selab.hcmus.edu.vn, &#123;tmtriet, ltnghia&#125;@fit.hcmus.edu.vn
+            &#123;vdkhoi, nvloc&#125;@selab.hcmus.edu.vn, tamnguyen@udayton.edu, &#123;tmtriet, ltnghia&#125;@fit.hcmus.edu.vn
           </div>
 
           {/* Action Buttons */}
