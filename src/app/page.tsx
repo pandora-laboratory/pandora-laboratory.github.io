@@ -63,35 +63,40 @@ export default async function Home() {
             <span>
               <a href="https://orcid.org/0000-0001-8831-8846" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
                 Dinh-Khoi Vo
-              </a><sup>1,2,3</sup>
+              </a><sup>1,2</sup>
             </span>
             <span>
               <a href="https://orcid.org/0000-0001-9351-3750" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
                 Van-Loc Nguyen
-              </a><sup>1,2,3</sup>
+              </a><sup>1,2</sup>
+            </span>
+            <span>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
+                Tam V. Nguyen
+              </a><sup>3</sup>
             </span>
             <span>
               <a href="https://orcid.org/0000-0003-3046-3041" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
                 Minh-Triet Tran
-              </a><sup>1,2,3</sup>
+              </a><sup>1,2</sup>
             </span>
             <span>
               <a href="https://orcid.org/0000-0002-7363-2610" target="_blank" rel="noopener noreferrer" className="text-sky-300 hover:text-sky-200 hover:underline">
                 Trung-Nghia Le
-              </a><sup>1,2,3</sup>
+              </a><sup>1,2</sup>
             </span>
           </div>
 
           {/* Affiliations */}
           <div className="text-base md:text-lg mb-4 flex flex-col items-center justify-center gap-y-2">
             <span>
-              <sup>1</sup>Faculty of Information Technology, University of Science, VNU-HCM, Ho Chi Minh City, Vietnam
+              <sup>1</sup>University of Science, VNU-HCM, Ho Chi Minh City, Vietnam
             </span>
             <span>
-              <sup>2</sup>Software Engineering Laboratory, University of Science, VNU-HCM, Ho Chi Minh City, Vietnam
+              <sup>2</sup>Vietnam National University, Ho Chi Minh City, Vietnam
             </span>
             <span>
-              <sup>3</sup>Vietnam National University, Ho Chi Minh City, Vietnam
+              <sup>3</sup>University of Dayton, Ohio, United States
             </span>
           </div>
 
