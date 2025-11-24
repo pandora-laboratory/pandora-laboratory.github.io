@@ -366,6 +366,17 @@ export default async function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold uppercase text-center mb-6">Acknowledgment</h2>
           <div className="flex-1">
+            {/* Funding and GPU Support */}
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">💰</span>
+                <h3 className="text-xl font-semibold text-amber-900">Funding and GPU Support</h3>
+              </div>
+              <p className="text-lg leading-relaxed text-amber-800">
+                This research is funded by the Vietnam National Foundation for Science and Technology Development (NAFOSTED) under Grant Number 102.05-2023.31. This research used the GPUs provided by the Intelligent Systems Lab at the Faculty of Information Technology, University of Science, VNU-HCM.
+              </p>
+            </div>
+
             {/* User Study Participants */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
               <div className="flex items-center gap-3 mb-4">
