@@ -2,13 +2,13 @@
   "pages": {
     "/page": [
       "static/chunks/060f9a97930f3d04.js",
-      "static/chunks/42168a3878d1e91e.css",
+      "static/chunks/b1e27b6901f34c35.css",
       "static/chunks/f146593b1533cb61.js",
       "static/chunks/d382f2d8d0f526a7.css",
       "static/chunks/fd2be76e6b40ca47.js",
-      "static/chunks/224331449d7c7e57.js",
-      "static/chunks/2af9fca721db194b.js",
-      "static/chunks/turbopack-480bbffd7a1ec151.js"
+      "static/chunks/2a75f1293046c36d.js",
+      "static/chunks/8da3e9e75e6909f4.js",
+      "static/chunks/turbopack-147b3193f543cbb7.js"
     ]
   }
 }
